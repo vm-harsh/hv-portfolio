@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@layer components {
+  .name {
+    @apply text-2xl md:text-3xl
+  }
+  .heading-primary-large {
+    @apply text-4xl md:text-6xl font-extrabold
+  }
+  .heading-primary{
+    @apply text-3xl md:text-4xl font-semibold
+  }
+  .heading-secondary {
+    @apply text-2xl md:text-3xl font-semibold
+  }
+  .para {
+    @apply text-lg md:text-xl font-semibold
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+*{
+  scroll-behavior: smooth;
+}
