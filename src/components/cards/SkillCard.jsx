@@ -8,7 +8,7 @@ const SkillCard = (props) => {
         <div className='grid grid-cols-2 gap-2'>
             {props?.skills?.map((skill,idx) => {
             const Icon = skill.icon;
-            return<div key={idx} className='flex bg-sky-800 p-5 rounded gap-2 text-white z-10'>
+            return<div key={idx} className='flex bg-sky-800 p-5 rounded gap-2 text-white z-10 items-center'>
                 {Icon && <Icon className="text-2xl bg"/>}
                 <h4 className='para'>{skill.name}</h4>
             </div>
