@@ -1,5 +1,6 @@
 import React from 'react'
-import owner2 from '../../public/owner2.png'
+import owner2 from '/owner2.png'
+import {motion} from "motion/react";
 
 const About = () => {
 
@@ -15,18 +16,28 @@ const About = () => {
     ]
 
   return (
-    <div id='about' className='w-full bg-black md:px-30 px-5 overflow-x-hidden min-w-[375px]'>
+    <div id='about' className='w-full bg-black md:px-30 px-5 overflow-x-hidden min-w-93.75'>
         {/* container */}
         <div className="text-white md:py-20 py-5 flex flex-wrap md:justify-start justify-evenly gap-5 md:gap-20">
             {/* Developer Image 2 */}
-            <div className='relative w-100 md:w-130 p-2 border'>
+            <motion.div
+            initial={{opacity:0,x:40}}
+            whileInView={{opacity:100, x:0}}
+            transition={{type:"tween",delay:0.2,duration:1,ease:"easeInOut"}}
+            viewport={{amout:0.8}}
+            className='relative w-100 md:w-130 p-2 border'>
                 <img src={owner2} alt="" />
                 <div className="absolute inset-x-0 bottom-0 h-40 bg-linear-to-t from-black to-transparent z-20"></div>
                 <div className="absolute inset-y-0 right-0 w-20 h-full bg-linear-to-r from-transparent to-black z-20"></div>
-            </div>
+            </motion.div>
 
             {/* About */}
-            <div className='flex flex-col justify-center md:py-8 gap-2 md:gap-5'>
+            <motion.div
+            initial={{opacity:0,x:-40}}
+            whileInView={{opacity:100, x:0}}
+            transition={{type:"tween",delay:0.2,duration:1,ease:"easeInOut"}}
+            viewport={{amout:0.8}}
+            className='flex flex-col justify-center md:py-8 gap-2 md:gap-5'>
                 <h1 className='heading-primary-large text-sky-300'>About Me</h1>
                 <p className='max-w-150 md:text-xl tracking-wide leading-8'>I'm a B.Tech student and Full-Stack Developer passionate about building scalable, user-friendly web applications. I enjoy solving problems with DSA, exploring new technologies, and turning ideas into real-world products with clean and efficient code.</p>
 
@@ -40,7 +51,7 @@ const About = () => {
                         </div>
                     </div>
                 })}
-            </div>
+            </motion.div>
         </div>
     </div>
   )
